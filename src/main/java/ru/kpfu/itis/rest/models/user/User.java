@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.kpfu.itis.rest.models.InfoModel;
 import ru.kpfu.itis.rest.models.user.Role;
 import ru.kpfu.itis.rest.models.user.Sex;
 import ru.kpfu.itis.rest.models.user.State;
@@ -42,4 +43,9 @@ public class User {
     private State state;
 
     private String confirmCode;
+
+    @ManyToOne
+    @JoinColumn(name = "model_id")
+    private InfoModel infoModel;
+
 }
